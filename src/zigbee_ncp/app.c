@@ -35,4 +35,12 @@ void sl_zigbee_af_radio_needs_calibrating_cb(void)
  */
 void sl_zigbee_af_main_init_cb(void)
 {
+  // Turn User LED on
+  GPIO_PinModeSet(gpioPortA, 7, gpioModePushPull, 0);
+
+  // Enable power to antenna switch
+  GPIO_PinModeSet(gpioPortB, 5, gpioModePushPull, 1);
+
+  // Enable U.FL antenna
+  GPIO_PinModeSet(gpioPortB, 4, gpioModePushPull, 1);
 }
